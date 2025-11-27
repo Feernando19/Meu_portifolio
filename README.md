@@ -15,7 +15,7 @@ Este projeto foi criado com foco em:
 ## 🌐 Demonstração
 
 Você pode acessar o site online através do **GitHub Pages**:
-👉 *(adicione aqui o link quando publicar)*
+👉 https://feernando19.github.io/Meu_portifolio/
 
 ---
 
