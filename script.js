@@ -1,93 +1,113 @@
-// ================================
-// CARREGAR CAPÍTULOS DO JSON
-// ================================
+// ======================================================
+// GARANTIR QUE O JS SÓ RODA DEPOIS DO HTML CARREGAR
+// ======================================================
+document.addEventListener("DOMContentLoaded", function () {
 
-let capitulos = [];
+  // ======================================================
+  // CARREGAR CAPÍTULOS DO JSON
+  // ======================================================
+  let capitulos = [];
 
-fetch("capitulos.json")
-  .then(res => res.json())
-  .then(data => {
-    capitulos = data;
-  })
-  .catch(err => console.error("Erro ao carregar capítulos:", err));
+  fetch("capitulos.json")
+    .then(res => res.json())
+    .then(data => {
+      capitulos = data; // salvamos o JSON carregado
+    })
+    .catch(err => console.error("Erro ao carregar capítulos:", err));
 
-// ================================
-// CARROSSEL
-// ================================
 
-const track = document.getElementById("carouselTrack");
-const btnLeft = document.querySelector(".carousel-btn.left");
-const btnRight = document.querySelector(".carousel-btn.right");
-let index = 0;
+  // ======================================================
+  // CARROSSEL
+  // ======================================================
+  const track = document.getElementById("carouselTrack");
+  const btnLeft = document.querySelector(".carousel-btn.left");
+  const btnRight = document.querySelector(".carousel-btn.right");
+  let index = 0;
 
-function updateCarousel() {
-  const itemWidth = track.children[0].offsetWidth + 20; // largura + gap
-  track.style.transform = `translateX(-${index * itemWidth}px)`;
-}
+  // Função que atualiza o movimento do carrossel
+  function updateCarousel() {
+    const firstItem = track.children[0];
+    if (!firstItem) return;
 
-btnRight.addEventListener("click", () => {
-  if (index < track.children.length - 1) {
-    index++;
-    updateCarousel();
+    // pegar largura real do item + gap
+    const itemWidth = firstItem.offsetWidth + 20;
+    track.style.transform = `translateX(-${index * itemWidth}px)`;
   }
-});
 
-btnLeft.addEventListener("click", () => {
-  if (index > 0) {
-    index--;
-    updateCarousel();
-  }
-});
+  // Garantir que as imagens carregaram ANTES de medir o tamanho
+  const imgs = track.querySelectorAll("img");
+  let loaded = 0;
 
-// ================================
-// EXPANDIR CAPÍTULO AO CLICAR
-// ================================
+  imgs.forEach(img => {
+    img.onload = () => {
+      loaded++;
+      if (loaded === imgs.length) {
+        updateCarousel(); // agora sim a largura está correta
+      }
+    };
+  });
 
-const boxConteudo = document.getElementById("capituloConteudo");
+  // Botão direita
+  btnRight.addEventListener("click", () => {
+    if (index < track.children.length - 1) {
+      index++;
+      updateCarousel();
+    }
+  });
 
-track.addEventListener("click", (e) => {
-  const item = e.target.closest(".carousel-item");
-  if (!item) return;
+  // Botão esquerda
+  btnLeft.addEventListener("click", () => {
+    if (index > 0) {
+      index--;
+      updateCarousel();
+    }
+  });
 
-  const id = item.getAttribute("data-id");
-  const cap = capitulos.find(c => c.id === id);
-  if (!cap) return;
 
-  boxConteudo.style.display = "block";
-  boxConteudo.innerHTML = `
-    <h3>${cap.titulo}</h3>
-    <p>${cap.conteudo}</p>
-    <p class="muted" style="margin-top:10px">Duração estimada: ${cap.duracao}</p>
-  `;
+  // ======================================================
+  // EXPANDIR CAPÍTULO AO CLICAR
+  // ======================================================
+  const boxConteudo = document.getElementById("capituloConteudo");
 
-  // boxConteudo.scrollIntoView({ behavior: "smooth" });
-});
+  track.addEventListener("click", (e) => {
+    const item = e.target.closest(".carousel-item");
+    if (!item) return;
 
-// ================================
-// TEMA (DARK/LIGHT)
-// ================================
+    const id = item.getAttribute("data-id");
+    const cap = capitulos.find(c => c.id === id);
+    if (!cap) return;
 
-const toggleTheme = document.getElementById("toggleTheme");
-let dark = false;
+    boxConteudo.style.display = "block";
+    boxConteudo.innerHTML = `
+      <h3>${cap.titulo}</h3>
+      <p>${cap.conteudo}</p>
+      <p class="muted" style="margin-top:10px">Duração estimada: ${cap.duracao}</p>
+    `;
+  });
 
-if (toggleTheme) {
+
+  // ======================================================
+  // TEMA (DARK/LIGHT)
+  // ======================================================
+  const toggleTheme = document.getElementById("toggleTheme");
+  let dark = false;
+
   toggleTheme.addEventListener("click", () => {
     dark = !dark;
     document.body.classList.toggle("dark", dark);
   });
-}
 
-// ================================
-// FORMULÁRIO DE CONTATO
-// ================================
 
-const form = document.getElementById("contactForm");
-const feedback = document.getElementById("formFeedback");
+  // ======================================================
+  // FORMULÁRIO DE CONTATO
+  // ======================================================
+  const form = document.getElementById("contactForm");
+  const feedback = document.getElementById("formFeedback");
 
-if (form) {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     feedback.textContent = "Mensagem enviada com sucesso!";
     form.reset();
   });
-}
+
+});
