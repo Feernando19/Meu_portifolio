@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Minha Jornada na Tecnologia — Portfólio & E-book</title>
+  <meta name="description" content="Portfólio e e-book interativo demonstrando HTML5, CSS, JS, acessibilidade e integração multimídia." />
+  <meta name="author" content="Fernado do Nascimento" />
+
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header aria-label="Barra de navegação">
+    <div class="nav" role="navigation">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"> Minha Jornada</div>
+        <div class="muted" style="font-size:14px">Portfólio & E-book</div>
+      </div>
+
+      <nav>
+        <ul class="menu" role="menubar" aria-label="Menu principal">
+          <li role="none"><a role="menuitem" href="#home">Início</a></li>
+          <li role="none"><a role="menuitem" href="#sobre">Sobre</a></li>
+          <li role="none"><a role="menuitem" href="#capitulos">Capítulos</a></li>
+          <li role="none"><a role="menuitem" href="#galeria">Galeria</a></li>
+          <li role="none"><a role="menuitem" href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+
+      <div style="display:flex;gap:8px;align-items:center">
+        <button id="toggleTheme" aria-pressed="false" title="Alternar tema">Tema</button>
+        <a class="muted" href="#" id="skipToContent">Pular para o conteúdo</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- LANDING -->
+    <section id="home" class="hero" tabindex="-1">
+      <div class="hero-inner">
+        <h1>Minha Jornada na Tecnologia</h1>
+        <p class="muted">Portfólio pessoal com um e-book interativo que reúne meus projetos, aprendizados e multimídia.</p>
+        <p>
+          <a class="cta" href="#capitulos">Começar o e-book</a>
+          <a style="margin-left:12px" href="#contato">Entrar em contato</a>
+        </p>
+        <div class="social-links">
+        <a href="https://www.instagram.com/nandoncm" target="_blank" aria-label="Instagram">
+        <img src="./img/instagramPreto.png" alt="Instagram" />
+        </a>
+
+        <a href="https://www.linkedin.com/in/fernando-do-nascimento-728204270/" target="_blank" aria-label="LinkedIn">
+     <img src="./img/linkdin.png" alt="LinkedIn" />
+     </a>
+
+    <a href="https://github.com/Feernando19" target="_blank" aria-label="GitHub">
+     <img src="./img/github.png" alt="GitHub" />
+     </a>
+        </div>
+        <div class="gif-area">
+        <img src="./img/giphy.gif" alt="GIF animado" />
+        </div>
+
+
+      </div>
+
+      <div aria-hidden="true">
+        <div class="card"  style="width:320px;text-align:center">
+          <h3>Fernando do Nascimento</h3>
+          <img class="perfil-foto" src="./img/Fernando-Nascimento-1.jpg" alt="Foto de Fernando do Nascimento" />
+          <p class="muted">Analista de testes Júnior</p>
+          <p style="margin-top:8px">Profissional de TI apaixonado por tecnologia desde cedo. Tenho experiência com HTML, CSS, JavaScript, Java, C e SQL, além de vivência com testes de software e PWA. Meu objetivo é atuar como Analista de Requisitos no futuro, contribuindo para soluções eficientes e bem estruturadas</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+    <section id="sobre" class="card" aria-labelledby="sobreTitle">
+      <h2 id="sobreTitle">Sobre</h2>
+      <p>Sou um profissional de TI com experiência em desenvolvimento e testes de software, sempre buscando criar soluções funcionais, acessíveis e bem estruturadas. Acredito na tecnologia como meio de facilitar a vida das pessoas.</p>
+    </section>
+
+<section id="capitulos" class="card" aria-labelledby="capitulosTitle">
+  <h2 id="capitulosTitle">Minha História — Capítulos</h2>
+  <p class="muted">Arraste para o lado e clique para expandir o capítulo.</p>
+
+  <div class="carousel" id="capCarousel">
+    <button class="carousel-btn left" aria-label="Anterior">◀</button>
+
+    <div class="carousel-track" id="carouselTrack">
+      <div class="carousel-item" data-id="c1">
+        <img src="./img/PCpositivo.jpg" alt="Imagem do Capítulo 1" />
+        <h3>Capítulo 1 — Onde tudo começou</h3>
+      </div>
+      <div class="carousel-item" data-id="c2">
+        <img src="./img/imagemDecisao.jpeg" alt="Imagem do Capítulo 2" />
+        <h3>Capítulo 2 — O momento da decisão</h3>
+      </div>
+      <div class="carousel-item" data-id="c3">
+        <img src="./img/imagemLinguagemJS.jpg" alt="Imagem do Capítulo 3" />
+        <h3>Capítulo 3 — Minhas habilidades técnicas</h3>
+      </div>
+      <div class="carousel-item" data-id="c4">
+        <img src="./img/ImagemSaudeMental.jpg" alt="Imagem do Capítulo 4" />
+        <h3>Capítulo 4 — Desafios e evolução</h3>
+      </div>
+      <div class="carousel-item" data-id="c5">
+        <img src="./img/tecnologia-e-mercado-de-trabalho-facilite-as-demandas-1170x700.png" alt="Imagem do Capítulo 5" />
+        <h3>Capítulo 5 — Meu futuro na tecnologia</h3>
+      </div>
+    </div>
+
+    <button class="carousel-btn right" aria-label="Próximo">▶</button>
+  </div>
+
+  <div id="capituloConteudo" class="capitulo-expandido" style="display:none"></div>
+</section>
+
+    
+
+    <!-- GALERIA -->
+    <section id="galeria" class="card" aria-labelledby="galeriaTitle">
+      <h2 id="galeriaTitle">Projetos</h2>
+
+      <div class="grid">
+        <figure class="phone-frame">
+    <img src="./img/Realizar login.png" alt="Protótipo de login" />
+      <figcaption class="muted">Protótipo de uma barbearia</figcaption>
+</figure>
+
+<figure class="phone-frame">
+  <img src="./img/Tela de editando um produtos.png" alt="Protótipo lista de compras" />
+  <figcaption class="muted">Protótipo de um aplicativo de lista de compras</figcaption>
+</figure>
+
+      </div>
+
+      <div style="margin-top:16px">
+        <h3>Vídeo demonstrativo</h3>
+        <video controls width="100%" style="max-width:720px;border-radius:8px">
+          <source src="Videos/Video Project.mp4" type="video/mp4" />
+          Seu navegador não suporta vídeo.
+        </video>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="card" aria-labelledby="contatoTitle">
+      <h2 id="contatoTitle">Contato</h2>
+
+      <form id="contactForm" aria-label="Formulário de contato">
+        <label for="name">Nome</label>
+        <input id="name" type="text" required />
+
+        <label for="email">Email</label>
+        <input id="email" type="email" required />
+
+        <label for="message">Mensagem</label>
+        <textarea id="message" required></textarea>
+
+        <button type="submit">Enviar</button>
+        <div id="formFeedback" class="muted"></div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="muted">© Fernando do Nascimento — Projeto para Desenvolvimento Front-End — UCB</div>
+  </footer>
+
+  <!-- JavaScript externo -->
+  <script src="script.js"></script>
+</body>
+</html>

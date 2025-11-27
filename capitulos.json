@@ -1,0 +1,37 @@
+[
+  {
+    "id": "c1",
+    "titulo": "Capítulo 1 — Onde tudo começou",
+    "resumo": "Como meu primeiro computador antigo despertou meu interesse pela tecnologia.",
+    "conteudo": "Meu interesse por tecnologia começou quando ganhei meu primeiro computador, um PC bem antigo e cheio de problemas. Como ele travava e apresentava muitos erros, precisei aprender sozinho a resolver cada falha. Isso me ensinou noções de hardware, manutenção e configuração do Windows, sistema que sempre usei. Mesmo com internet lenta e cheia de limitações, foi ali que a curiosidade sobre tecnologia nasceu e cresceu naturalmente.",
+    "duracao": "1 min"
+  },
+  {
+    "id": "c2",
+    "titulo": "Capítulo 2 — O momento da decisão",
+    "resumo": "Como escolhi seguir na área de TI e iniciar minha jornada acadêmica.",
+    "conteudo": "No final do ensino médio, enquanto muitos já tinham certeza do caminho a seguir, eu ainda estava indeciso. Mas uma coisa sempre chamava atenção: todos ao meu redor reconheciam meu 'dom' com computadores. Isso me fez perceber que TI era uma área que eu gostava e que oferecia boas oportunidades. Então decidi cursar Análise e Desenvolvimento de Sistemas na Católica. Hoje, no final do curso, vejo como essa escolha moldou quem eu sou — tanto profissionalmente quanto pessoalmente.",
+    "duracao": "1 min"
+  },
+  {
+    "id": "c3",
+    "titulo": "Capítulo 3 — Meus primeiros aprendizados técnicos",
+    "resumo": "As tecnologias e experiências práticas que construíram minha base técnica.",
+    "conteudo": "Minha jornada prática na tecnologia começou na faculdade, onde aprendi HTML, CSS, JavaScript, Java, C e SQL. Também participei do desenvolvimento de um aplicativo PWA, no qual fui responsável pelo levantamento de requisitos, documentação e testes. Essa experiência reforçou minha afinidade com áreas analíticas e mostrou como cada etapa do desenvolvimento está interligada.",
+    "duracao": "1 min"
+  },
+  {
+    "id": "c4",
+    "titulo": "Capítulo 4 — Desafios e evolução pessoal",
+    "resumo": "As dificuldades emocionais e técnicas que enfrentei no caminho.",
+    "conteudo": "Minhas maiores dificuldades nunca foram apenas técnicas. Por muito tempo, enfrentei problemas com disciplina, ansiedade e desmotivação, que dificultavam meu progresso nos estudos e na área profissional. Com o tempo, percebi que precisava cuidar da minha saúde mental. Fiz psicoterapia, me conheci mais profundamente e consegui evoluir com mais clareza, foco e leveza. Hoje sou capaz de aprender e crescer de forma muito mais consistente.",
+    "duracao": "1 min"
+  },
+  {
+    "id": "c5",
+    "titulo": "Capítulo 5 — Meu futuro na tecnologia",
+    "resumo": "Meus objetivos e o caminho que pretendo seguir na área de TI.",
+    "conteudo": "Atualmente sou Analista de Teste Júnior e estou me desenvolvendo para crescer ainda mais na área. Meu objetivo nos próximos anos é me tornar Analista de Requisitos, pois gosto de entender problemas, levantar necessidades, conversar com usuários e transformar ideias em soluções reais. Vejo na tecnologia um caminho de crescimento, estabilidade e possibilidade de impactar pessoas com meu trabalho. Essa é a jornada que quero construir daqui para frente.",
+    "duracao": "1 min"
+  }
+]
