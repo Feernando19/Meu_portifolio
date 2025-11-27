@@ -15,7 +15,7 @@ Este projeto foi criado com foco em:
 ## 🌐 Demonstração
 
 Você pode acessar o site online através do **GitHub Pages**:
-👉 *(adicione aqui o link quando publicar)*
+👉 https://feernando19.github.io/Meu_portifolio/
 
 ---
 
@@ -135,7 +135,3 @@ Folder: /root
 ## 📄 Licença
 
 Este projeto é apenas para fins educacionais e demonstrativos.
-
----
-
-Se quiser que eu gere também um **README mais profissional**, com badges, GIFs, ou uma versão totalmente em inglês — posso fazer também! 💙
