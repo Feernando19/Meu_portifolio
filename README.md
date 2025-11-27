@@ -135,7 +135,3 @@ Folder: /root
 ## 📄 Licença
 
 Este projeto é apenas para fins educacionais e demonstrativos.
-
----
-
-Se quiser que eu gere também um **README mais profissional**, com badges, GIFs, ou uma versão totalmente em inglês — posso fazer também! 💙
